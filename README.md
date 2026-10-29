@@ -10,6 +10,9 @@ built from their group-algebra description and decoded with BP-OSD.
 | 1. Surface-code threshold, circuit-level noise, MWPM (PyMatching) | ✅ |
 | 2. Bivariate-bicycle codes from F2[x,y]/(xˡ−1, yᵐ−1), BP-OSD, comparison with the surface code | ⬜ in progress |
 | 3. Resource estimate from the measured scaling | ⬜ |
+| 4. Hand-written MWPM decoder for the toric code, checked against PyMatching | ⬜ in progress |
+| 5. Lattice surgery: logical Z⊗Z measurement between two patches (merge and split) | ⬜ in progress |
+| 6. The Part 4 decoder generalized to Stim detector error models, decoding Part 5 | ⬜ in progress |
 
 ## Part 1 result
 
@@ -55,16 +58,28 @@ src/qec_stim/
   decode.py      detector error model → PyMatching → logical error rate
   bb_code.py     bivariate-bicycle check matrices over F2          (Part 2)
   resource.py    scaling fit and qubit-count estimate               (Part 3)
-scripts/threshold.py   the Part 1 sweep, CSV and plot
-tests/                 pytest; Parts 2–3 skip until implemented
-docs/walkthrough.md    how the pipeline works, step by step
+  toric.py       toric-code lattice: edges, checks, syndromes        (Part 4)
+  mwpm.py        minimum-weight perfect matching decoder             (Part 4)
+  css_circuit.py multi-phase CSS syndrome-extraction circuit builder (Part 5)
+  patches.py     rotated surface-code patches on a shared grid       (Part 5)
+  lattice_surgery.py  the Z⊗Z merge/split protocol                   (Part 5)
+  dem_mwpm.py    MWPM on a Stim detector error model                 (Part 6)
+scripts/threshold.py         the Part 1 sweep, CSV and plot
+scripts/toric_threshold.py   Part 4: my decoder vs PyMatching, code-capacity noise
+scripts/lattice_surgery.py   Parts 5–6: lattice-surgery failure rates, PyMatching and mine
+tests/                       pytest; unfinished parts skip
+docs/walkthrough.md          how the Part 1 pipeline works, step by step
+docs/decoder.md              the decoder, step by step
+docs/lattice_surgery.md      lattice surgery, step by step
 ```
 
 ## How this was built
 
-The Part 1 pipeline and the test harness were written with AI assistance and
-reviewed by me. The code construction, decoder comparison and resource estimate
-(Parts 2–3) are my own work. The split is recorded in [CLAUDE.md](CLAUDE.md).
+The Part 1 pipeline, the circuit builder and patch geometry (`css_circuit.py`,
+`patches.py`), and the test harness were written with AI assistance and reviewed
+by me. The code construction, resource estimate, matching decoders and the
+lattice-surgery protocol (`bb_code.py`, `resource.py`, `mwpm.py`, `dem_mwpm.py`,
+`lattice_surgery.py`) are my own work. The split is recorded in [CLAUDE.md](CLAUDE.md).
 
 ## References
 

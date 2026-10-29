@@ -5,3 +5,4 @@ ldpc>=2.0
 numpy
 matplotlib
 pytest
+networkx

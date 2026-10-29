@@ -11,11 +11,16 @@ bugs, and suggest idioms in snippets of at most 3 lines. They must not fill in
 
 - `src/qec_stim/bb_code.py` — bivariate-bicycle code construction over F2 (Part 2)
 - `src/qec_stim/resource.py` — scaling fit and resource estimate (Part 3)
+- `src/qec_stim/mwpm.py` — hand-written toric-code MWPM decoder
+- `src/qec_stim/lattice_surgery.py` — Z⊗Z lattice-surgery protocol (Part 5)
+- `src/qec_stim/dem_mwpm.py` — MWPM on Stim detector error models (Part 6)
 - the BP-OSD comparison script for Part 2, once started
 
 ## Written with AI assistance — Qiyu reviewed
 
 - `src/qec_stim/surface.py`, `src/qec_stim/decode.py`, `scripts/threshold.py` (Part 1)
+- `src/qec_stim/toric.py` (lattice bookkeeping), `scripts/toric_threshold.py`
+- `src/qec_stim/css_circuit.py`, `src/qec_stim/patches.py`, `scripts/lattice_surgery.py`
 - everything in `tests/`, `.github/`, `setup.ps1`, `pyproject.toml`, `docs/`
 
 ## Conventions
