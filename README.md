@@ -83,7 +83,24 @@ lattice-surgery protocol (`bb_code.py`, `resource.py`, `mwpm.py`, `dem_mwpm.py`,
 
 ## References
 
+**Simulation and decoding tools**
 - C. Gidney, "Stim: a fast stabilizer circuit simulator", Quantum 5, 497 (2021).
-- O. Higgott, C. Gidney, "Sparse Blossom: correcting a million errors per core second with minimum-weight matching" (PyMatching v2), 2023.
-- S. Bravyi et al., "High-threshold and low-overhead fault-tolerant quantum memory", Nature 627, 778 (2024).
-- J. Roffe et al., "Decoding across the quantum low-density parity-check code landscape" (BP-OSD, `ldpc`), 2020.
+- O. Higgott, C. Gidney, "Sparse Blossom: correcting a million errors per core second with minimum-weight matching" (PyMatching v2), Quantum 9, 1600 (2025).
+- J. Roffe, D. R. White, S. Burton, E. Campbell, "Decoding across the quantum low-density parity-check code landscape" (BP-OSD, `ldpc`), Phys. Rev. Research 2, 043423 (2020).
+- A. Hagberg, D. Schult, P. Swart, "Exploring network structure, dynamics, and function using NetworkX", Proc. SciPy (2008). Used for the matching in Parts 4 and 6.
+
+**Surface code and its decoding (Parts 1, 4, 6)**
+- A. Kitaev, "Fault-tolerant quantum computation by anyons", Ann. Phys. 303, 2 (2003).
+- E. Dennis, A. Kitaev, A. Landahl, J. Preskill, "Topological quantum memory", J. Math. Phys. 43, 4452 (2002). Decoding by minimum-weight matching of defects.
+- C. Wang, J. Harrington, J. Preskill, "Confinement-Higgs transition in a disordered gauge theory and the accuracy threshold for quantum memory", Ann. Phys. 303, 31 (2003). The ~10.3% code-capacity threshold.
+- J. Edmonds, "Paths, trees, and flowers", Can. J. Math. 17, 449 (1965). The blossom algorithm for maximum matching.
+- A. G. Fowler, M. Mariantoni, J. M. Martinis, A. N. Cleland, "Surface codes: Towards practical large-scale quantum computation", Phys. Rev. A 86, 032324 (2012). Rotated layout and the CNOT order that avoids hook errors.
+
+**qLDPC codes (Part 2)**
+- S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov, P. Rall, T. J. Yoder, "High-threshold and low-overhead fault-tolerant quantum memory", Nature 627, 778 (2024).
+
+**Lattice surgery (Part 5)**
+- C. Horsman, A. G. Fowler, S. Devitt, R. Van Meter, "Surface code quantum computing by lattice surgery", New J. Phys. 14, 123011 (2012).
+- L. Z. Cohen, I. H. Kim, S. D. Bartlett, B. J. Brown, "Low-overhead fault-tolerant quantum computing using long-range connectivity", Sci. Adv. 8 (2022), arXiv:2110.10794.
+- A. Cowtan, S. Burton, "CSS code surgery as a universal construction", Quantum 8, 1344 (2024).
+- D. J. Williamson, T. J. Yoder, "Low-overhead fault-tolerant quantum computation by gauging logical operators", arXiv:2410.02213 (2024).
